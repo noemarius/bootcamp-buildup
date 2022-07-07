@@ -56,14 +56,11 @@ function displayFetchedData(data) {
     cardInfoTitleDescription.textContent = dataItem.duration;
 
 
+    cardContainer.addEventListener("click", function () {});
     cardContainer.addEventListener("click", function (event) {
         event.preventDefault();
         location.href("../html/page_details")
         let id = dataItem.mal_id;
         localStorage.setItem("storage", id);
       });
-  }
-
-  displayFetchedData(dummyAnime);
-};
-
+}
