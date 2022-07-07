@@ -3,28 +3,24 @@
 // const movieCard = document.querySelector(".movie-card");
 // const informations = document.querySelector(".card-details");
 
-searchForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  return fetch(`https://api.jikan.moe/v4/anime?q=${input.value}`)
+/* searchForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    fetch(`https://api.jikan.moe/v4/anime?q=${input.value}`)
+    fetch(`https://api.jikan.moe/v4/anime?q=$naruto`)
+        .then(function (response) {
+            response.json();
+        })
+        .then(function (result) {
+            console.log(result);
+            displayFetchedData(result);
+        });
+  }); 
+*/
+fetch(`https://api.jikan.moe/v4/anime?q=naruto`)
     .then(function (response) {
-      return response.json();
+        return response.json();
     })
     .then(function (result) {
-      console.log(result);
-      return result;
-      //  const imgEl = document.createElement("img");
-      //  imgEl.src = result.data.images.jpg.image_url;
-      //  movieCard.appendChild(imgEl);
-      //
-      //  const title = document.createElement("h3");
-      //  title.innerHTML = result.data.title;
-      //  informations.appendChild(title);
-      //
-      //  const episodes = document.createElement("p");
-      //  episodes.innerHTML =
-      //    "Number of episodes: " +
-      //    result.data.episodes +
-      //    "Duration: " +
-      //    result.data.duration;
+        console.log(result);
+        displayFetchedData(result.data);
     });
-});
