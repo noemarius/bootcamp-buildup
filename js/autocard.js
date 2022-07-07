@@ -15,6 +15,7 @@ let dummyAnime = [
         images: { jpg: { url: "randomLink2" } },
         duration: "2h",
     },
+
 ];
 
 //Logic
@@ -50,6 +51,12 @@ function makeCard(dataItem) {
     cardImg.src = dataItem.images.jpg.image_url;
     cardInfoTitle.textContent = dataItem.title;
     cardInfoTitleDescription.textContent = dataItem.duration;
+
+
+  //cardContainer.addEventListener("click", function (event) {
+  //  event.preventDefault();
+  //  location.href = "../html/page_details.html"
+  //});
 }
 
 displayFetchedData(dummyAnime);
