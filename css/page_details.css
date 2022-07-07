@@ -8,3 +8,11 @@
 .synopsis::first-letter {
     text-transform: uppercase;
 }
+.moreInfo {
+    font-weight: lighter;
+    font-size: small; 
+    display: flex;   
+}
+.moreInfo > span {
+    padding-right: 20px
+}
