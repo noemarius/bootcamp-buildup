@@ -52,8 +52,5 @@ function makeCard(dataItem) {
     cardInfoTitle.textContent = dataItem.title;
     cardInfoTitleDescription.textContent = dataItem.duration;
 
-    //cardContainer.addEventListener("click", function (event) {
-    //  event.preventDefault();
-    //  location.href = "../html/page_details.html"
-    //});
+    cardContainer.addEventListener("click", function () {});
 }
