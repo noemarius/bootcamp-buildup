@@ -1,0 +1,56 @@
+:root {
+    --background-blue: #0F1014;
+    --footer-black: black;
+    --paragraph-grey: grey;
+    --amc-red: #E51937;
+}
+
+body {
+    background-color: var(--background-blue);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--paragraph-grey);
+}
+
+#movies-container{
+    display: flex;
+    /* justify-content: space-evenly; */
+    margin: 20px;
+    height: 800px;
+}
+
+.card-container{
+    width: 250px;
+    height: 500px;
+}
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    width: 100%;
+}
+
+.movie-card>img:first-of-type {
+    height: 375px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie-card > div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+}

@@ -1,3 +1,4 @@
+/*DONE*/
 :root {
     --background-blue: #0F1014;
     --footer-black: black;
@@ -5,6 +6,7 @@
     --amc-red: #E51937;
 }
 
+/*DONE*/
 body {
     background-color: var(--background-blue);
     color: white;
@@ -33,17 +35,20 @@ body {
 }
 
 /* Movie card */
+/*DONE*/
 .pbu-movie-card {
     height: 500px;
     width: 100%;
 }
 
+/*DONE*/
 .pbu-movie-card > img:first-of-type {
     height: 375px;
     width: 100%;
     object-fit: cover;
 }
 
+/*DONE*/
 .pbu-movie-card > div {
     display: flex;
     flex-direction: column;
@@ -52,11 +57,13 @@ body {
     gap: 10px;
 }
 
+/*DONE*/
 h3 {
     font-size: 20px;
     font-weight: 700;
 }
 
+/*DONE*/
 p {
     font-size: 11px;
     text-transform: uppercase;
