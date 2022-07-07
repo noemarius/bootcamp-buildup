@@ -80,8 +80,4 @@ window.onload = function() {
         let body = document.getElementsByTagName("body")[0];
         body.appendChild(card);
     };
-
-    for(var i=0; i<3; i++) {
-        createCard(boxOffice[i].img, boxOffice[i].title, boxOffice[i].info)
-    }
 };
