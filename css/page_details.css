@@ -1,0 +1,10 @@
+.movieImg {
+    float: right;
+}
+
+.synopsis {
+    text-transform: lowercase;
+}
+.synopsis::first-letter {
+    text-transform: uppercase;
+}

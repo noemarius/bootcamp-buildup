@@ -9,7 +9,8 @@ fetch(END_POINT)
 .then(result => {
     let anime = result.data
     console.log(anime)
-    let h2 = addElements(movie, "h2", "movie_title", anime.title)
+    let h2 = document.querySelector(".movieTitle")
+    h2.innerHTML = anime.title
     let divDesImg = addElements(movie, "div", "descImg") 
     let img = addElements(divDesImg, "img", "movieImg")
     let p = addElements(divDesImg, "p", "synopsis", anime.synopsis)
@@ -21,6 +22,7 @@ function addElements(parent, child, className, childContent) {
     let childEl = document.createElement(child)
     childEl.className = className
     parent.appendChild(childEl)
-    childEl.innerHTML = childContent
+    if(childContent) {childEl.innerHTML = childContent}
+    else(childEl.innerHTML = "")
     return childEl
 }
