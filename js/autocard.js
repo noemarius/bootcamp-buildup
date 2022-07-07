@@ -7,13 +7,13 @@ let selectAnimeCardRow = document.querySelector(".nm-animecardrow");
 let dummyAnime = [
     {
         title: "random",
-        url: "randomLink",
-        pic: "srcImg",
+        images: { jpg: { url: "randomLink" } },
+        duration: "2h",
     },
     {
         title: "random2",
-        url: "randomLink2",
-        pic: "srcImg2",
+        images: { jpg: { url: "randomLink2" } },
+        duration: "2h",
     },
 ];
 
@@ -21,7 +21,7 @@ let dummyAnime = [
 
 function displayFetchedData(data) {
     data.forEach((element) => {
-        makeCard(data);
+        makeCard(element);
     });
 }
 
@@ -34,7 +34,9 @@ function makeCard(dataItem) {
     let cardInfoDiv = document.createElement("div");
     let cardInfoTitleDiv = document.createElement("div");
     let cardInfoTitleDescription = document.createElement("div");
+    let cardInfoTitle = document.createElement("h3");
 
+    cardInfoTitleDiv.appendChild(cardInfoTitle);
     cardInfoDiv.appendChild(cardInfoTitleDiv);
     cardInfoDiv.appendChild(cardInfoTitleDescription);
     cardItem.appendChild(cardInfoDiv);
@@ -45,9 +47,9 @@ function makeCard(dataItem) {
     cardContainer.className = "col-12 col-md-6 col-lg-4 col-xl-3";
     cardItem.className = "pbu-movie-card";
 
-    cardImg.textContent = "iuwqndiu";
-    cardInfoTitleDescription.textContent = "iuwqndiu";
-    cardInfoTitleDiv.textContent = "iuwqndiu";
+    cardImg.src = dataItem.images.jpg.image_url;
+    cardInfoTitle.textContent = dataItem.title;
+    cardInfoTitleDescription.textContent = dataItem.duration;
 }
 
 displayFetchedData(dummyAnime);
