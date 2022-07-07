@@ -15,12 +15,12 @@ let dummyAnime = [
         images: { jpg: { url: "randomLink2" } },
         duration: "2h",
     },
-
 ];
 
 //Logic
 
 function displayFetchedData(data) {
+    console.log(data);
     data.forEach((element) => {
         makeCard(element);
     });
@@ -52,11 +52,8 @@ function makeCard(dataItem) {
     cardInfoTitle.textContent = dataItem.title;
     cardInfoTitleDescription.textContent = dataItem.duration;
 
-
-  //cardContainer.addEventListener("click", function (event) {
-  //  event.preventDefault();
-  //  location.href = "../html/page_details.html"
-  //});
+    //cardContainer.addEventListener("click", function (event) {
+    //  event.preventDefault();
+    //  location.href = "../html/page_details.html"
+    //});
 }
-
-displayFetchedData(dummyAnime);
