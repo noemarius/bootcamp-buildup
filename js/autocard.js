@@ -1,32 +1,32 @@
-//html elements references variable
+window.onload = function () {
+  //html elements references variable
 
-let selectAnimeCardRow = document.querySelector(".nm-animecardrow");
+  let selectAnimeCardRow = document.querySelector(".nm-animecardrow");
 
-//temp dummydata to build the js functions
+  //temp dummydata to build the js functions
 
-let dummyAnime = [
+  let dummyAnime = [
     {
-        title: "random",
-        images: { jpg: { url: "randomLink" } },
-        duration: "2h",
+      title: "random",
+      images: { jpg: { url: "randomLink" } },
+      duration: "2h",
     },
     {
-        title: "random2",
-        images: { jpg: { url: "randomLink2" } },
-        duration: "2h",
+      title: "random2",
+      images: { jpg: { url: "randomLink2" } },
+      duration: "2h",
     },
+  ];
 
-];
+  //Logic
 
-//Logic
-
-function displayFetchedData(data) {
+  function displayFetchedData(data) {
     data.forEach((element) => {
-        makeCard(element);
+      makeCard(element);
     });
-}
+  }
 
-function makeCard(dataItem) {
+  function makeCard(dataItem) {
     let parent = selectAnimeCardRow;
     let cardContainer = document.createElement("div");
     let cardItem = document.createElement("div");
@@ -52,11 +52,13 @@ function makeCard(dataItem) {
     cardInfoTitle.textContent = dataItem.title;
     cardInfoTitleDescription.textContent = dataItem.duration;
 
+    cardContainer.addEventListener("click", function (event) {
+        event.preventDefault();
+        location.href("../html/page_details")
+        let id = dataItem.mal_id;
+        localStorage.setItem("storage", id);
+      });
+  }
 
-  //cardContainer.addEventListener("click", function (event) {
-  //  event.preventDefault();
-  //  location.href = "../html/page_details.html"
-  //});
-}
-
-displayFetchedData(dummyAnime);
+  displayFetchedData(dummyAnime);
+};
