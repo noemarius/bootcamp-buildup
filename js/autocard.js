@@ -16,11 +16,14 @@ window.onload = function () {
       images: { jpg: { url: "randomLink2" } },
       duration: "2h",
     },
-  ];
 
-  //Logic
+];
 
-  function displayFetchedData(data) {
+//Logic
+
+function displayFetchedData(data) {
+    console.log(data);
+
     data.forEach((element) => {
       makeCard(element);
     });
@@ -52,6 +55,7 @@ window.onload = function () {
     cardInfoTitle.textContent = dataItem.title;
     cardInfoTitleDescription.textContent = dataItem.duration;
 
+
     cardContainer.addEventListener("click", function (event) {
         event.preventDefault();
         location.href("../html/page_details")
@@ -62,3 +66,4 @@ window.onload = function () {
 
   displayFetchedData(dummyAnime);
 };
+
